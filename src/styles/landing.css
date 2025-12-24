@@ -1,0 +1,11 @@
+.logo img {
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn button {
+  border: none;
+  display: flex;
+  justify-content: end;
+}
