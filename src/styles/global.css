@@ -2,3 +2,24 @@ body {
   background-color: #765a3f;
   margin: 0;
 }
+.logo img {
+  width: 200px;
+  cursor: pointer;
+  filter: drop-shadow(0 0 3px black);
+  transition: all 0.3s ease;
+}
+.logo img:hover {
+  filter: drop-shadow(0 0 8px black);
+  transform: scale(1.05);
+}
+
+.bg-image {
+  position: fixed;
+
+  width: 1500px;
+
+  height: 100vh;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}

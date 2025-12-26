@@ -1,15 +1,16 @@
 import "../styles/landing.css";
-
-import logo from "../assets/logo.png";
-import bgImage from "../assets/bgImage.png";
+import { useNavigate } from "react-router-dom";
+// import logo from "../assets/logo.png";
+// import bgImage from "../assets/bgImage.png";
 
 function Landing() {
+  const navigate = useNavigate();
   return (
     <>
-      <img src={bgImage} className="bg-image" alt="" />
+      {/* <img src={bgImage} className="bg-image" alt="" />
       <div className="logo">
         <img src={logo} alt="brewverzz logo" />
-      </div>
+      </div> */}
 
       <div className="btn">
         <button> Login </button>
@@ -22,8 +23,8 @@ function Landing() {
         <p>A Place Where Every Cups Tells The Story.</p>
 
         <div className="action">
-          <button>Let's Explore</button>
-          <button>Quiz</button>
+          <button onClick={() => navigate("/explore")}>Let's Explore</button>
+          <button onClick={() => navigate("/quiz")}>Quiz</button>
         </div>
       </div>
     </>
