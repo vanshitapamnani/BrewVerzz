@@ -42,9 +42,9 @@
   text-align: center;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
 }
-.explore-card:hover {
+/* .explore-card:hover {
   transform: translateY(-8px);
-}
+} */
 
 .explore-card img {
   width: 100%;
