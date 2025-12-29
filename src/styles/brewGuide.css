@@ -29,11 +29,91 @@
 .close-btn {
   position: absolute;
   top: 18px;
-  right: 22px;
+  right: 10px;
   background: #35281c;
   border: none;
-  border-radius: 5px;
-  font-size: 12px;
+  border-radius: 7px;
+  width: 30px;
+  font-size: 20px;
   cursor: pointer;
   color: #ebdbc1;
 }
+
+/* Close button hover */
+.close-btn:hover {
+  background: #4a3826;
+}
+
+/* Modal typography */
+.brew-modal h2 {
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
+  color: #35281c;
+}
+
+.brew-modal h3 {
+  font-size: 1.1rem;
+  margin: 1.2rem 0 0.6rem;
+  color: #4a3826;
+}
+
+.brew-modal h4 {
+  font-size: 0.95rem;
+  margin: 1rem 0 0.4rem;
+  color: #5b4633;
+}
+
+/* Sections spacing */
+.modal-section {
+  margin-bottom: 1.5rem;
+}
+
+.modal-subsection {
+  margin-left: 1rem;
+  padding-left: 0.8rem;
+  border-left: 2px solid rgba(53, 40, 28, 0.2);
+}
+
+/* Lists */
+.brew-modal ul {
+  padding-left: 1.2rem;
+  margin: 0.4rem 0 0;
+}
+
+.brew-modal li {
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 0.4rem;
+  color: #35281c;
+}
+
+/* Scrollbar (subtle) */
+.brew-modal::-webkit-scrollbar {
+  width: 6px;
+}
+
+.brew-modal::-webkit-scrollbar-thumb {
+  background: rgba(53, 40, 28, 0.35);
+  border-radius: px;
+}
+
+/* Mobile optimizations */
+/* @media (max-width: 480px) {
+  .brew-modal {
+    padding: 20px;
+    border-radius: 22px;
+  }
+
+  .brew-modal h2 {
+    font-size: 1.4rem;
+  }
+
+  .brew-modal h3 {
+    font-size: 1rem;
+  }
+
+  .brew-modal li {
+    font-size: 0.85rem;
+  }
+} */

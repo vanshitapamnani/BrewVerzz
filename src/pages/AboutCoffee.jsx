@@ -6,6 +6,7 @@ import roast from "../assets/roast.png";
 import grind from "../assets/grinding.png";
 import choose from "../assets/choose.png";
 import { useEffect, useState } from "react";
+import DetailedInfo from "./ModalAboutCoffe";
 
 function About() {
   const [info, setInfo] = useState(null);
@@ -55,23 +56,29 @@ function About() {
   ];
 
   return (
-    <div className="card-bg" style={{ padding: "60px" }}>
-      <div className="explore-page">
-        <h1 className="explore-title"> All About Beans 🫘</h1>
-        <div className="explore-cards">
-          {aboutCoffee.map((about) => (
-            <div className="explore-card" key={about.id}>
-              <img src={about.image} alt={about.title} />
-              <h3> {about.title}</h3>
-              <p> {about.shortText}</p>
-              <span className="read-more-btn" onClick={() => setInfo(about)}>
-                Read More
-              </span>
-            </div>
-          ))}
+    <>
+      <div className="card-bg" style={{ padding: "60px" }}>
+        <div className="explore-page">
+          <h1 className="explore-title"> All About Beans 🫘</h1>
+          <div className="explore-cards">
+            {aboutCoffee.map((about) => (
+              <div className="explore-card" key={about.id}>
+                <img src={about.image} alt={about.title} />
+                <h3> {about.title}</h3>
+                <p> {about.shortText}</p>
+                <span
+                  className="read-more-btn"
+                  onClick={() => setInfo(about.id)}>
+                  Read More
+                </span>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+
+      {info && <DetailedInfo info={info} setInfo={setInfo} />}
+    </>
   );
 }
 
