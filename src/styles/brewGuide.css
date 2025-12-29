@@ -30,8 +30,10 @@
   position: absolute;
   top: 18px;
   right: 22px;
-  background: none;
+  background: #35281c;
   border: none;
-  font-size: 22px;
+  border-radius: 5px;
+  font-size: 12px;
   cursor: pointer;
+  color: #ebdbc1;
 }

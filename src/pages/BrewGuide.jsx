@@ -140,15 +140,12 @@ function Guide() {
 
   return (
     <>
-      <div className="card-bg">
+      <div className="card-bg" style={{ padding: "60px" }}>
         <div className="explore-page">
           <h1 className="explore-title"> Brew Guide</h1>
           <div className="explore-cards">
             {brewMethods.map((brew) => (
-              <div
-                key={brew.id}
-                className="explore-card"
-                style={{ cursor: "pointer" }}>
+              <div key={brew.id} className="explore-card">
                 <img src={brew.image} alt={brew.title} />
                 <h3>{brew.title}</h3>
                 <p>{brew.subtitle}</p>
@@ -168,7 +165,7 @@ function Guide() {
           onClick={() => setSelectedBrew(null)}>
           <div className="brew-modal" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setSelectedBrew(null)}>
-              ❌
+              −
             </button>
             <img src={selectedBrew.image} alt={selectedBrew.title} />
             <h2> {selectedBrew.title}</h2>
