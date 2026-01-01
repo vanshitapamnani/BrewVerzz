@@ -1,0 +1,27 @@
+.background {
+  background-color: #ebdbc1;
+  min-height: 40vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  border-radius: 50px;
+  margin: 150px;
+  margin-left: 210px;
+  margin-right: 210px;
+}
+
+.log-btn {
+  background-color: #765a3f;
+  color: #ebdbc1;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  display: inline-block;
+  padding: 10px 20px;
+}
+
+.btn-wrapper {
+  display: flex;
+  gap: 70px;
+}

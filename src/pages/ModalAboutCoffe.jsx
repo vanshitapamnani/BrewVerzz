@@ -23,8 +23,8 @@ const content = [
         ],
       },
       {
-        title: "Coffee in the Arab World",
-        section: [
+        subTitle: "Coffee in the Arab World",
+        subSection: [
           {
             heading: "Spreading in Arabia",
             points: [
@@ -45,8 +45,8 @@ const content = [
         ],
       },
       {
-        title: "Coffee Reaches Europe",
-        section: [
+        subTitle: "Coffee Reaches Europe",
+        subSection: [
           {
             heading: "Inital Resistence",
             points: [
@@ -65,8 +65,8 @@ const content = [
         ],
       },
       {
-        title: "Global Expansion",
-        section: [
+        subTitle: "Global Expansion",
+        subSection: [
           {
             heading: "Colonial Expansion",
             points: [
@@ -85,8 +85,8 @@ const content = [
         ],
       },
       {
-        title: "Modern Coffee Culture",
-        section: [
+        subTitle: "Modern Coffee Culture",
+        subSection: [
           {
             heading: "Industrial Era",
             points: [
@@ -290,8 +290,9 @@ function DetailedInfo({ info, setInfo }) {
                 ))}
               </ul>
             )}
-            {item.section &&
-              item.section.map((sub, subIndex) => (
+            {item.subTitle && <h3>{item.subTitle}</h3>}
+            {item.subSection &&
+              item.subSection.map((sub, subIndex) => (
                 <div key={subIndex} className="modal-subsection">
                   <h4>{sub.heading}</h4>
                   <ul>
