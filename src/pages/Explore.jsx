@@ -12,11 +12,7 @@ function Explore() {
         <div className="explore-cards">
           <ExploreCard image={guide} title="Brew Guide" link="/guide" />
           <ExploreCard image={about} title="More About Coffee" link="/about" />
-          <ExploreCard
-            image={log}
-            title="Log Your Coffee Experience"
-            link="/log"
-          />
+          <ExploreCard image={log} title="Your Coffee Journal" link="/log" />
         </div>
       </div>
     </div>

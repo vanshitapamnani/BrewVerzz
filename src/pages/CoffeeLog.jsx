@@ -1,6 +1,8 @@
 import "../styles/log.css";
+import { useNavigate } from "react-router-dom";
 
 function Log() {
+  const navigate = useNavigate();
   return (
     <>
       <div className="background">
@@ -11,8 +13,14 @@ function Log() {
           <p id="para">Start your journey with your first cup.</p>
 
           <div className="btn-wrapper">
-            <button className="log-btn">To Log Bean Experience</button>
-            <button className="log-btn"> To Log Next Bean Place</button>
+            <button
+              className="log-btn"
+              onClick={() => navigate("/log/experience")}>
+              To Log Bean Experience
+            </button>
+            <button className="log-btn" onClick={() => navigate("/log/bean")}>
+              To Log Next Bean Place
+            </button>
           </div>
         </div>
       </div>

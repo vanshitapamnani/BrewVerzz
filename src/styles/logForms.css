@@ -1,0 +1,44 @@
+.form {
+  background-color: #765a3f;
+  padding: 30px;
+  border-radius: 20px;
+  border: solid black 2px;
+  margin-top: 40px;
+  margin-bottom: 60px;
+}
+
+.form form {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 16px 20px;
+  align-items: center;
+  color: #ebdbc1;
+  font-size: larger;
+}
+
+.submit-btn {
+  padding: 12px 24px;
+  background-color: #ebdbc1;
+  color: #765a3f;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.form input {
+  background-color: #ebdbc1;
+  border-radius: 8px;
+  border: none;
+}
+
+.form select {
+  background-color: #ebdbc1;
+  border-radius: 8px;
+  border: none;
+}
+.submit-btn:hover {
+  background-color: #c9a468;
+}
