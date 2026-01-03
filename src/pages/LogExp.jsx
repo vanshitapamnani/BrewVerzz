@@ -10,7 +10,6 @@ export default function LogExp() {
   };
   return (
     <div className="background">
-      {/* <h2> Beans Worth Traveling For 🛣️ </h2> */}
       <h2> Log your Bean Experience ⭐️ </h2>
       {!showForm && (
         <button
@@ -48,7 +47,7 @@ export default function LogExp() {
             <label>Add a Bean Image</label>
             <input type="file" />
 
-            <button className="submit-btn"> Save Bean Place</button>
+            <button className="submit-btn"> Save Bean Experience</button>
             <button
               type="button"
               className="submit-btn"
