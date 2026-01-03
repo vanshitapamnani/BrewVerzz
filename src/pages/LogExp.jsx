@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/log.css";
-import "../styles/logForms.css";
+import "../styles/form.css";
 export default function LogExp() {
   const [showForm, setShowForm] = useState(false);
 

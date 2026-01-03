@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../styles/log.css";
-import "../styles/logForms.css";
+import "../styles/form.css";
 
 export default function LogBean() {
   const [viewForm, setViewForm] = useState(false);
@@ -16,9 +16,9 @@ export default function LogBean() {
         <div className="form">
           <form onSubmit={handleAdd}>
             <label> Coffee Name:</label>
-            <input type="text" />
+            <input type="text" required />
             <label>Place Name:</label>
-            <input type="text" placeholder="Enter cafe name" />
+            <input type="text" placeholder="Enter cafe name" required />
             <label>Location:</label>
             <input type="text" placeholder="📍" />
             <button className="submit-btn"> Save Bean Place</button>
