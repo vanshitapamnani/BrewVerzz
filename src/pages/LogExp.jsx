@@ -6,10 +6,12 @@ import "../styles/logCard.css";
 
 export default function LogExp() {
   const [showForm, setShowForm] = useState(false);
+  const [edit, setEdit] = useState(null);
   const [logs, setLogs] = useState(() => {
     const savedLogs = localStorage.getItem("beanLogs");
     return savedLogs ? JSON.parse(savedLogs) : [];
   });
+
   // const [base64Image, setBase64Image] = useState("");
   const [formData, setFormData] = useState({
     coffeeName: "",
@@ -42,6 +44,14 @@ export default function LogExp() {
   const handleSubmit = (e) => {
     e.preventDefault();
     // const finalImage = base64Image;
+    if (edit !== null) {
+      const updatedLogs = [...logs];
+      updatedLogs[edit] = formData;
+      setLogs(updatedLogs);
+      setEdit(null);
+    } else {
+      setLogs([...logs, formData]);
+    }
     setLogs([...logs, formData]);
     setShowForm(false);
     setFormData({
@@ -53,6 +63,17 @@ export default function LogExp() {
       rating: "",
       image: null,
     });
+  };
+
+  const handleDelete = (index) => {
+    const updatedLogs = logs.filter((_, i) => i !== index);
+    setLogs(updatedLogs);
+  };
+
+  const handleEdit = (index) => {
+    setFormData(logs[index]);
+    setEdit(index);
+    setShowForm(true);
   };
   return (
     <div className="background">
@@ -163,6 +184,9 @@ export default function LogExp() {
             coffeeName={log.coffeeName}
             rating={log.rating}
             image={log.image}
+            cafe={log.cafe}
+            onDelete={() => handleDelete(index)}
+            onEdit={() => handleEdit(index)}
           />
         ))}
       </div>

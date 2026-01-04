@@ -10,6 +10,7 @@
   border-radius: 25px;
   padding: 25px;
   margin-top: 45px;
+  margin-bottom: 50px;
   width: 260px;
   text-align: center;
   box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
@@ -18,9 +19,53 @@
 .log-card img {
   width: 100%;
   border-radius: 20px;
+  height: 200px;
+}
+
+.log-card h2 {
+  margin: 20px 0;
+  color: #333;
 }
 
 .log-card h3 {
   margin: 20px 0;
   color: #333;
+}
+.log-card p {
+  margin: 20px 0;
+  color: #333;
+}
+
+.delete-btn {
+  /* padding: 12px 24px; */
+  padding: 5px 10px;
+  font-size: medium;
+
+  background-color: #ebdbc1;
+  border-radius: 12px;
+  border: 2px solid #765a3f;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.edit-btn {
+  /* padding: 12px 24px; */
+  padding: 5px 10px;
+  font-size: 20px;
+
+  background-color: #ebdbc1;
+  border-radius: 12px;
+  border: 2px solid #765a3f;
+  cursor: pointer;
+  grid-column: 1 / -1;
+  justify-self: center;
+  margin-top: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
 }
