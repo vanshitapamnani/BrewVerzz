@@ -52,7 +52,7 @@ export default function LogExp() {
     } else {
       setLogs([...logs, formData]);
     }
-    setLogs([...logs, formData]);
+    // setLogs([...logs, formData]);
     setShowForm(false);
     setFormData({
       coffeeName: "",
