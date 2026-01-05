@@ -166,7 +166,12 @@ export default function LogExp() {
               }}
             />
 
-            <button className="submit-btn"> Save Bean Experience</button>
+            <button className="submit-btn">
+            
+              {edit !== null
+                ? "Update Bean Experience"
+                : "Save Bean Experience"}
+            </button>
             <button
               type="button"
               className="submit-btn"
@@ -176,20 +181,21 @@ export default function LogExp() {
           </form>
         </div>
       )}
-
-      <div className="log-cards">
-        {logs.map((log, index) => (
-          <LogCard
-            key={index}
-            coffeeName={log.coffeeName}
-            rating={log.rating}
-            image={log.image}
-            cafe={log.cafe}
-            onDelete={() => handleDelete(index)}
-            onEdit={() => handleEdit(index)}
-          />
-        ))}
-      </div>
+      {!showForm && (
+        <div className="log-cards">
+          {logs.map((log, index) => (
+            <LogCard
+              key={index}
+              coffeeName={log.coffeeName}
+              rating={log.rating}
+              image={log.image}
+              cafe={log.cafe}
+              onDelete={() => handleDelete(index)}
+              onEdit={() => handleEdit(index)}
+            />
+          ))}
+        </div>
+      )}
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/log.css";
 import "../styles/form.css";
-//import LogCard from "../components/LogCard";
+import LogCard from "../components/LogCard";
 
 export default function LogBean() {
   const [viewForm, setViewForm] = useState(false);
@@ -45,7 +45,7 @@ export default function LogBean() {
         </div>
       )}
 
-      {/* <LogCard image = {image}/> */}
+      {/* <LogCard image={image} /> */}
     </div>
   );
 
