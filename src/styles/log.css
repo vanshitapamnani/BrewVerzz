@@ -3,7 +3,7 @@
   min-height: 40vh;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
   position: relative;
   border-radius: 50px;
@@ -44,4 +44,37 @@ p {
 
 #para {
   margin-bottom: 50px;
+}
+
+.center-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.check-item {
+  display: flex;
+  gap: 15px;
+  padding: 12px;
+  background: #ebdbc1;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+.empty-text {
+  margin-top: 40px;
+  font-size: 18px;
+  color: #765a3f;
+  opacity: 0.8;
+  text-align: center;
+  font-style: italic;
+}
+
+.checklist {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
 }

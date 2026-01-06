@@ -1,15 +1,25 @@
 import { useState } from "react";
 import "../styles/log.css";
 import "../styles/form.css";
-import LogCard from "../components/LogCard";
+// import LogCard from "../components/LogCard";
 
 export default function LogBean() {
   const [viewForm, setViewForm] = useState(false);
+  const [beanPlace, setBeanPlace] = useState([]);
+  const [formData, setFormData] = useState({
+    coffeeName: "",
+    placeName: "",
+    location: "",
+    visited: false,
+  });
 
   const handleAdd = (e) => {
     e.preventDefault();
+    setBeanPlace([...beanPlace, formData]);
+
     setViewForm(false);
   };
+
   return (
     //CONDITIONAL RENDERING WITH TERNIANY OPERATOR
     <div className="background">
@@ -17,11 +27,30 @@ export default function LogBean() {
         <div className="form">
           <form onSubmit={handleAdd}>
             <label> Coffee Name:</label>
-            <input type="text" required />
+            <input
+              type="text"
+              onChange={(e) =>
+                setFormData({ ...formData, coffeeName: e.target.value })
+              }
+              required
+            />
             <label>Place Name:</label>
-            <input type="text" placeholder="Enter cafe name" required />
+            <input
+              type="text"
+              placeholder="Enter cafe name"
+              onChange={(e) =>
+                setFormData({ ...formData, placeName: e.target.value })
+              }
+              required
+            />
             <label>Location:</label>
-            <input type="text" placeholder="📍" />
+            <input
+              type="text"
+              onChange={(e) =>
+                setFormData({ ...formData, location: e.target.value })
+              }
+              placeholder="📍"
+            />
             <button className="submit-btn"> Save Bean Place</button>
             <button
               type="button"
@@ -32,20 +61,47 @@ export default function LogBean() {
           </form>
         </div>
       ) : (
-        // <div className="background">
         <div>
           <h2> Beans Worth Traveling For 🛣️ </h2>
-
-          <button
-            className="log-btn"
-            style={{ marginTop: "50px" }}
-            onClick={() => setViewForm(true)}>
-            Add your next bean place
-          </button>
+          <div className="center-wrapper">
+            <button
+              className="log-btn"
+              style={{ marginTop: "50px" }}
+              onClick={() => setViewForm(true)}>
+              Add your next bean place
+            </button>
+          </div>
         </div>
       )}
 
-      {/* <LogCard image={image} /> */}
+      {/* start from here learning */}
+      {beanPlace.length === 0 && (
+        <p className="empty-text">No Places Added Yet ☕️</p>
+      )}
+      <div className="check-list">
+        {beanPlace.map((item, index) => (
+          <div key={index} className="check-item">
+            <input
+              type="checkbox"
+              checked={item.visited}
+              onChange={() => {
+                const updated = [...beanPlace];
+                updated[index].visited = !updated[index].visited;
+                setBeanPlace(updated);
+              }}
+            />
+            <div>
+              <h4
+                style={{
+                  textDecoration: item.visited ? "line-through" : "none",
+                }}>
+                {" "}
+                {item.placeName} , {item.location} , {item.coffeeName}
+              </h4>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 

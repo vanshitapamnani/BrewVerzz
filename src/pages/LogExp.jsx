@@ -167,7 +167,6 @@ export default function LogExp() {
             />
 
             <button className="submit-btn">
-            
               {edit !== null
                 ? "Update Bean Experience"
                 : "Save Bean Experience"}
