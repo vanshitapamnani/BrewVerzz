@@ -52,15 +52,6 @@ p {
   margin-top: 10px;
 }
 
-.check-item {
-  display: flex;
-  gap: 15px;
-  padding: 12px;
-  background: #ebdbc1;
-  border-radius: 12px;
-  margin-top: 15px;
-}
-
 .empty-text {
   margin-top: 40px;
   font-size: 18px;
@@ -70,11 +61,30 @@ p {
   font-style: italic;
 }
 
-.checklist {
-  margin-top: 40px;
+/* .check-list {
+  margin-top: 20px;
   width: 100%;
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 2px;
+  outline: 1px #765a3f;
+} */
+
+.check-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 40px;
+  width: 100%;
+  max-width: 400px;
+  outline: 2px solid #765a3f;
+  border-radius: 6px;
+}
+
+.check-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 10px;
 }

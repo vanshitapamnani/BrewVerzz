@@ -1,11 +1,15 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import "../styles/log.css";
 import "../styles/form.css";
 // import LogCard from "../components/LogCard";
 
 export default function LogBean() {
   const [viewForm, setViewForm] = useState(false);
-  const [beanPlace, setBeanPlace] = useState([]);
+  const [beanPlace, setBeanPlace] = useState(() => {
+    const saved = localStorage.getItem("beanPlaces");
+    return saved ? JSON.parse(saved) : [];
+  });
+
   const [formData, setFormData] = useState({
     coffeeName: "",
     placeName: "",
@@ -13,9 +17,19 @@ export default function LogBean() {
     visited: false,
   });
 
+  useEffect(() => {
+    localStorage.setItem("beanPlaces", JSON.parse.stringify(beanPlace));
+  }, [beanPlace]);
+
   const handleAdd = (e) => {
     e.preventDefault();
     setBeanPlace([...beanPlace, formData]);
+    setFormData({
+      coffeeName: "",
+      placeName: "",
+      location: "",
+      visited: false,
+    });
 
     setViewForm(false);
   };
@@ -61,47 +75,47 @@ export default function LogBean() {
           </form>
         </div>
       ) : (
-        <div>
-          <h2> Beans Worth Traveling For 🛣️ </h2>
-          <div className="center-wrapper">
-            <button
-              className="log-btn"
-              style={{ marginTop: "50px" }}
-              onClick={() => setViewForm(true)}>
-              Add your next bean place
-            </button>
-          </div>
-        </div>
-      )}
-
-      {/* start from here learning */}
-      {beanPlace.length === 0 && (
-        <p className="empty-text">No Places Added Yet ☕️</p>
-      )}
-      <div className="check-list">
-        {beanPlace.map((item, index) => (
-          <div key={index} className="check-item">
-            <input
-              type="checkbox"
-              checked={item.visited}
-              onChange={() => {
-                const updated = [...beanPlace];
-                updated[index].visited = !updated[index].visited;
-                setBeanPlace(updated);
-              }}
-            />
-            <div>
-              <h4
-                style={{
-                  textDecoration: item.visited ? "line-through" : "none",
-                }}>
-                {" "}
-                {item.placeName} , {item.location} , {item.coffeeName}
-              </h4>
+        <>
+          {/* /* start from here learning */}
+          <div>
+            <h2> Beans Worth Traveling For 🛣️ </h2>
+            <div className="center-wrapper">
+              <button
+                className="log-btn"
+                style={{ marginTop: "50px" }}
+                onClick={() => setViewForm(true)}>
+                Add your next bean place
+              </button>
             </div>
           </div>
-        ))}
-      </div>
+          {beanPlace.length === 0 && (
+            <p className="empty-text">No Places Added Yet ☕️</p>
+          )}
+          <div className="check-list">
+            {beanPlace.map((item, index) => (
+              <div key={index} className="check-item">
+                <input
+                  type="checkbox"
+                  checked={item.visited}
+                  onChange={() => {
+                    const updated = [...beanPlace];
+                    updated[index].visited = !updated[index].visited;
+                    setBeanPlace(updated);
+                  }}
+                />
+                <div>
+                  <p
+                    style={{
+                      textDecoration: item.visited ? "line-through" : "none",
+                    }}>
+                    {item.placeName} , {item.location} , {item.coffeeName}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </>
+      )}
     </div>
   );
 
