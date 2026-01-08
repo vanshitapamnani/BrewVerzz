@@ -6,7 +6,7 @@ import "../styles/form.css";
 export default function LogBean() {
   const [viewForm, setViewForm] = useState(false);
   const [beanPlace, setBeanPlace] = useState(() => {
-    const saved = localStorage.getItem("beanPlaces");
+    const saved = localStorage.getItem("beanPlace");
     return saved ? JSON.parse(saved) : [];
   });
 
@@ -18,7 +18,7 @@ export default function LogBean() {
   });
 
   useEffect(() => {
-    localStorage.setItem("beanPlaces", JSON.parse.stringify(beanPlace));
+    localStorage.setItem("beanPlace", JSON.stringify(beanPlace));
   }, [beanPlace]);
 
   const handleAdd = (e) => {
@@ -110,6 +110,10 @@ export default function LogBean() {
                     }}>
                     {item.placeName} , {item.location} , {item.coffeeName}
                   </p>
+                  <div className="">
+                    <button>Delete</button>
+                    <button>Edit</button>
+                  </div>
                 </div>
               </div>
             ))}
