@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import "../styles/log.css";
 import "../styles/form.css";
+
 // import LogCard from "../components/LogCard";
 
 export default function LogBean() {
@@ -9,6 +10,7 @@ export default function LogBean() {
     const saved = localStorage.getItem("beanPlace");
     return saved ? JSON.parse(saved) : [];
   });
+  const [editIndex, setEditIndex] = useState(null);
 
   const [formData, setFormData] = useState({
     coffeeName: "",
@@ -23,7 +25,15 @@ export default function LogBean() {
 
   const handleAdd = (e) => {
     e.preventDefault();
-    setBeanPlace([...beanPlace, formData]);
+    if (editIndex !== null) {
+      const updated = [...beanPlace];
+      updated[editIndex] = formData;
+      setBeanPlace(updated);
+      setEditIndex(null);
+    } else {
+      setBeanPlace([...beanPlace, formData]);
+    }
+
     setFormData({
       coffeeName: "",
       placeName: "",
@@ -103,16 +113,30 @@ export default function LogBean() {
                     setBeanPlace(updated);
                   }}
                 />
-                <div>
+                <div className="check-content">
                   <p
                     style={{
                       textDecoration: item.visited ? "line-through" : "none",
                     }}>
                     {item.placeName} , {item.location} , {item.coffeeName}
                   </p>
-                  <div className="">
-                    <button>Delete</button>
-                    <button>Edit</button>
+                  {/* <div className="action-button"> */}
+                  <div className="check-actions">
+                    <button
+                      onClick={() => {
+                        const updated = beanPlace.filter((_, i) => i !== index);
+                        setBeanPlace(updated);
+                      }}>
+                      🗑️
+                    </button>
+                    <button
+                      onClick={() => {
+                        setFormData(item);
+                        setEditIndex(index);
+                        setViewForm(true);
+                      }}>
+                      ✏️
+                    </button>
                   </div>
                 </div>
               </div>

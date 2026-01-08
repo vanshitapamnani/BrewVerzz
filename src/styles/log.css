@@ -88,3 +88,24 @@ p {
   gap: 10px;
   padding: 6px 10px;
 }
+
+.check-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* width: 100%; */
+  gap: 20px;
+}
+
+.check-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.check-actions button {
+  border: 2px solid #765a3f;
+  background-color: #ebdbc1;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+}
