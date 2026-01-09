@@ -53,6 +53,7 @@ export default function LogBean() {
             <label> Coffee Name:</label>
             <input
               type="text"
+              value={formData.coffeeName}
               onChange={(e) =>
                 setFormData({ ...formData, coffeeName: e.target.value })
               }
@@ -62,6 +63,7 @@ export default function LogBean() {
             <input
               type="text"
               placeholder="Enter cafe name"
+              value={formData.placeName}
               onChange={(e) =>
                 setFormData({ ...formData, placeName: e.target.value })
               }
@@ -70,6 +72,7 @@ export default function LogBean() {
             <label>Location:</label>
             <input
               type="text"
+              value={formData.location}
               onChange={(e) =>
                 setFormData({ ...formData, location: e.target.value })
               }
@@ -118,7 +121,7 @@ export default function LogBean() {
                     style={{
                       textDecoration: item.visited ? "line-through" : "none",
                     }}>
-                    {item.placeName} , {item.location} , {item.coffeeName}
+                    {item.placeName} , {item.coffeeName}, {item.location}
                   </p>
                   {/* <div className="action-button"> */}
                   <div className="check-actions">
