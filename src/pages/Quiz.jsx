@@ -1,5 +1,9 @@
 function Quiz() {
-  return <div>This is the Quiz section </div>;
+  return (
+    <div>
+      <div></div>
+    </div>
+  );
 }
 
 export default Quiz;
