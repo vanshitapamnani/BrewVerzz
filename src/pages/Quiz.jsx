@@ -1,6 +1,8 @@
+import "../styles/quiz.css";
+
 function Quiz() {
   return (
-    <div>
+    <div className="background">
       <div></div>
     </div>
   );
