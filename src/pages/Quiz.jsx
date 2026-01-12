@@ -1,9 +1,34 @@
 import "../styles/quiz.css";
-
+const quizData = [
+  {
+    id: 1,
+    question: "How do you like your coffee?",
+    options: [
+      { text: "Hot ☕", bg: "hot.jpg", value: "hot" },
+      { text: "Cold 🧊", bg: "cold.jpg", value: "cold" },
+    ],
+  },
+  {
+    id: 2,
+    question: "How strong do you like it?",
+    options: [
+      { text: "Light", bg: "light.jpg", value: "light" },
+      { text: "Strong", bg: "strong.jpg", value: "strong" },
+    ],
+  },
+  {
+    id: 3,
+    question: "Where do you enjoy coffee the most?",
+    options: [
+      { text: "At home 🏠", bg: "home.jpg", value: "home" },
+      { text: "Café ☕", bg: "cafe.jpg", value: "cafe" },
+    ],
+  },
+];
 function Quiz() {
   return (
     <div className="background">
-      <div></div>
+      <div>{quizData.map((question, index) => {})}</div>
     </div>
   );
 }
