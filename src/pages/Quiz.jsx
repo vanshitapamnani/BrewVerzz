@@ -58,13 +58,15 @@ function Quiz() {
       <div className="quiz-bg">
         <div style={{ backgroundImage: bgImg ? `url(${bgImg})` : "none" }}>
           <div className="quiz-card">
-            <h2>{currentQuestion.question}</h2>
+            <div className="heading">
+              <h2>{currentQuestion.question}</h2>
+            </div>
             <div className="options">
               {currentQuestion.options.map((option, index) => (
                 <button
                   key={index}
                   className={`option-btn${
-                    selectedOption === option.value ? "active" : ""
+                    selectedOption === option.value ? " active" : ""
                   }`}
                   onClick={() => handleOptionClick(option)}>
                   {option.text}
