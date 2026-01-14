@@ -1,4 +1,13 @@
 import "../styles/quiz.css";
+
+import cold from "../assets/cold.png";
+import hot from "../assets/hot.png";
+import dark from "../assets/dark";
+import light from "../assets/light";
+import home from "../assets/home.png";
+import cafe from "../assets/cafe.png";
+import { useState } from "react";
+
 const quizData = [
   {
     id: 1,
@@ -26,10 +35,17 @@ const quizData = [
   },
 ];
 function Quiz() {
+
+  const [currentIndex , setCurrentIdex] = useState(0);
+  const [selectedOption , setSelectedOption] = useState(null);
+  const [bgImg , setBgImg] = useState(null);
+  
+
+
   return (
-    <div className="background">
-      <div>{quizData.map((question, index) => {})}</div>
-    </div>
+    // <div className="background">
+    //   <div>{quizData.map((question, index) => {})}</div>
+    // </div>
   );
 }
 
