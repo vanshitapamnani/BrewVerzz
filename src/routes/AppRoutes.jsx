@@ -6,7 +6,7 @@ import Guide from "../pages/BrewGuide";
 import Explore from "../pages/Explore";
 import Log from "../pages/CoffeeLog";
 import Login from "../pages/Login";
-import SignUp from "../pages/Signup";
+import Signup from "../pages/Signup";
 import Quiz from "../pages/Quiz";
 import LogExp from "../pages/LogExp";
 import LogBean from "../pages/LogBean";
@@ -16,7 +16,7 @@ function AppRoutes() {
     <Routes>
       <Route path="/" element={<Landing />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<SignUp />} />
+      <Route path="/signup" element={<Signup />} />
       <Route path="/about" element={<About />} />
       <Route path="/guide" element={<Guide />} />
       <Route path="/explore" element={<Explore />} />
