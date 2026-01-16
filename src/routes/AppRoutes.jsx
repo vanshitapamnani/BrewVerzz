@@ -5,11 +5,12 @@ import About from "../pages/AboutCoffee";
 import Guide from "../pages/BrewGuide";
 import Explore from "../pages/Explore";
 import Log from "../pages/CoffeeLog";
-import Login from "../pages/Login";
+// import Login from "../pages/Login";
 import Signup from "../pages/Signup";
 import Quiz from "../pages/Quiz";
 import LogExp from "../pages/LogExp";
 import LogBean from "../pages/LogBean";
+import Login from "../pages/Login";
 
 function AppRoutes() {
   return (
