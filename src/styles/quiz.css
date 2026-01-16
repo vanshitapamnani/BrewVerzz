@@ -40,7 +40,10 @@
   flex-direction: column;
   /* margin: 150px auto; */
 
-  width: 1200px;
+  /* ALWAYS USE MAX-WIDTH AND WIDTH -100%
+  TO REDUCE THE SIZE OF THE CONTENT AS THE REDUCED SIZE OF THE SCREEN  */
+  width: 100%;
+  max-width: 1200px;
 }
 /* .heading {
   background-color: #ebdbc1;
