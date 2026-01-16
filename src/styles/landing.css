@@ -56,8 +56,8 @@
 
 .bg-image {
   position: fixed;
-
-  width: 1500px;
+  width: 100%;
+  max-width: 1500px;
 
   height: 100vh;
   opacity: 0.5;
