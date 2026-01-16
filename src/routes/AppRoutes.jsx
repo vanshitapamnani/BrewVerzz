@@ -10,7 +10,7 @@ import Signup from "../pages/Signup";
 import Quiz from "../pages/Quiz";
 import LogExp from "../pages/LogExp";
 import LogBean from "../pages/LogBean";
-import Login from "../pages/Login";
+import Login from "../pages/login";
 
 function AppRoutes() {
   return (

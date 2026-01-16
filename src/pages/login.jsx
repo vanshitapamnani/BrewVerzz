@@ -1,5 +1,5 @@
 function Login() {
-  return <div>This is the Login section for the user. </div>;
+  return <div>This is the Login section. </div>;
 }
 
 export default Login;
