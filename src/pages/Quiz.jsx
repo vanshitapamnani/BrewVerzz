@@ -39,10 +39,18 @@ function Quiz() {
   const [currentIndex, setCurrentIdex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [bgImg, setBgImg] = useState(null);
+  const [answers, setAnswers] = useState({});
+  const [result, setResult] = useState(false);
   const currentQuestion = quizData[currentIndex];
+
   const handleOptionClick = (option) => {
     setSelectedOption(option.value);
     setBgImg(option.bg);
+
+    setAnswers((prev) => ({
+      ...prev,
+      [currentQuestion.id]: option.value, // prev = [1:hot , 2:strong ,3:place]
+    }));
   };
 
   function handleNext() {
@@ -50,7 +58,51 @@ function Quiz() {
       setCurrentIdex(currentIndex + 1);
       setSelectedOption(null);
       setBgImg(null);
+    } else {
+      setResult(true);
     }
+  }
+
+  function getResult() {
+    const { 1: temp, 2: strength, 3: place } = answers;
+    if ((temp === "hot") & (strength === "strong") && place === "cafe") {
+      return {
+        title: "Espresso Personality",
+        desc: "Bold, energetic and loves fast-paced life.",
+      };
+    }
+    if (temp === "hot" && strength === "light" && place === "home") {
+      return {
+        title: "Latte Lover 🤍",
+        desc: "Comfort-seeking, calm and emotionally grounded.",
+      };
+    }
+
+    if (temp === "cold" && strength === "strong") {
+      return {
+        title: "Cold Brew Mind 🧊",
+        desc: "Focused, modern and goal-oriented.",
+      };
+    }
+
+    return {
+      title: "Cappuccino Soul ☁️",
+      desc: "Balanced, creative and adaptable.",
+    };
+  }
+  if (result) {
+    const finalResult = getResult();
+    return (
+      <div className="quiz-page">
+        <div className="quiz-card">
+          <h1>{finalResult.title}</h1>
+          <p>{finalResult.dec}</p>
+          <button className="next-btn" onClick={() => window.location.reload()}>
+            Retake Quiz
+          </button>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -78,9 +130,8 @@ function Quiz() {
               className="next-btn"
               disabled={!selectedOption}
               onClick={handleNext}>
-              Next
+              {currentIndex === quizData.length - 1 ? "See Result" : "Next"}
             </button>
-            <button>Show Result</button>
           </div>
         </div>
       </div>
