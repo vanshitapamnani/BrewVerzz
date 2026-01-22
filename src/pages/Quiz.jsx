@@ -80,6 +80,7 @@ function Quiz() {
               onClick={handleNext}>
               Next
             </button>
+            <button>Show Result</button>
           </div>
         </div>
       </div>
