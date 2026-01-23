@@ -35,7 +35,7 @@ const quizData = [
   },
 ];
 function Quiz() {
-  //INITALISATION OF STATES
+  //INITALIZATION OF STATES
   const [currentIndex, setCurrentIdex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [bgImg, setBgImg] = useState(null);
@@ -96,10 +96,11 @@ function Quiz() {
       <div className="quiz-page">
         <div className="quiz-card">
           <h1>{finalResult.title}</h1>
-          <p>{finalResult.dec}</p>
+          <p>{finalResult.desc}</p>
           <button className="next-btn" onClick={() => window.location.reload()}>
             Retake Quiz
           </button>
+          {/* window.location.reload() ==> reloads the entire app, instead of resetting the entire app.  */}
         </div>
       </div>
     );

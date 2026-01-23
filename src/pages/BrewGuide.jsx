@@ -165,7 +165,7 @@ function Guide() {
           onClick={() => setSelectedBrew(null)}>
           <div className="brew-modal" onClick={(e) => e.stopPropagation()}>
             <button className="close-btn" onClick={() => setSelectedBrew(null)}>
-              −
+              ╳
             </button>
             <img src={selectedBrew.image} alt={selectedBrew.title} />
             <h2> {selectedBrew.title}</h2>
