@@ -9,9 +9,9 @@ function Header() {
   return (
     <header className="header">
       <div className="btn">
-        <button onClick={() => navigate("/login")}> Login </button>
-        <span>/</span>
-        {/* <button onClick={() => navigate("/signUp")}> Sign Up</button> */}
+        {/* <button onClick={() => navigate("/login")}> Login </button>
+        <span>/</span> */}
+        <button onClick={() => navigate("/signUp")}> Sign Up</button>
       </div>
 
       <div className="logo">
